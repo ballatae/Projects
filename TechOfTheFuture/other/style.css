@@ -1,0 +1,1833 @@
+/* CREATOR: ETNIK BALLATA */
+
+@font-face {
+  font-family: nasalization;
+  src: url(../other/Fonts/nasalization-free.zip);
+}
+@font-face {
+  font-family: prototype;
+  src: url(../other/Fonts/prototype.zip);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+} /* *fit all the web*/
+/* background color used in most of the pages */
+body {
+  background: linear-gradient(to top right, #0b0c10 0%, #181a22 100%);
+  background-repeat: no-repeat;
+} /* ? body background */
+
+/* ! scrollbar animation start*/
+::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0b0c10;
+  border-radius: 100vw;
+  margin-block: 0.2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c5c6c7;
+  border-radius: 100vw;
+  border: 0.1em solid #1f2833;
+  transition: .2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b5b8ba;
+  border-radius: 150vw;
+}
+/*! scrollbar animation end*/
+/* !------------------------------//////
+!---------------------------------//////
+!-------------NAV BAR-------------//////
+!---------------------------------//////
+!---------------------------------//////
+!---------------------------------/// */
+/* nav bar position diplayed at the top of the page and also being responsive */
+nav {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #1f2833;
+  font-family: nasalization, sans-serif;
+  z-index: 1;
+} /* *nav-bar style */
+
+/* the title of the wesite link properties  */
+.logo a {
+  text-decoration: none;
+  color: #c5c6c7;
+  text-transform: uppercase;
+}
+
+/* the title properties */
+.logo {
+  color: #c5c6c7;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+} /* * tech of the future on pc/ logo on moblie*/
+
+/* c */
+.logo a {
+  transition: 0.5s;
+}
+
+/* when we hover over the title */
+.logo a:hover {
+  color: #45a29e;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px #c5c6c7;
+  font-size: 110%;
+} /* * logo hover effect*/
+
+/* nav links properties */
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 45%;
+  z-index: +1;
+}
+
+/* li properties so we will remove the dot in the front  */
+.nav-links li {
+  list-style: none;
+}
+
+/* removing the link properties and making it look like the title   */
+.nav-links a {
+  color: #c5c6c7;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* transition used for a smoother hover effect */
+.nav-links a {
+  transition: 0.5s;
+}
+
+/* when we hover over the links on the nav-bar */
+.nav-links a:hover {
+  color: #45a29e;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px #c5c6c7;
+  font-size: 110%;
+}
+
+/* * drop-down menu*/
+.sub-menu-1 {
+  display: none;
+}
+
+/* when we hover the sub-menu will be displayed */
+.nav-links li:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+  background: #1f2833;
+  margin-left: -10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: +1;
+}
+/* properties for moving it to the better looking place under the nav bar */
+.nav-links li:hover .sub-menu-1 ul {
+  display: block;
+  margin: 10px;
+}
+
+/* when we hover the links the effects and style-properties */
+.nav-links li:hover .sub-menu-1 ul li {
+  width: 100px;
+  padding: 10px;
+  border-bottom: 1px dotted #c5c6c7;
+  background: #1f2833;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: left;
+  font-size: 11.5px;
+}
+
+/* so the last child won't have a line under it  */
+.nav-links li:hover .sub-menu-1 ul li:last-child {
+  border-bottom: none;
+}
+
+/* so the text will be increased a little bit less than the main pages/ 
+since they are sub-pages */
+.sub-menu-1 ul li:hover {
+  font-size: 12px;
+}
+/* * till here*/
+
+/* for mobile and tablet use */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+/* when we pres what size will it contain in the page and the transition */
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #c5c6c7;
+  margin: 5px;
+  transition: all 00.3s ease;
+}
+
+/*  nav links style will give it a 60% so the burger nav bar will be hidden  */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+/* whe the max width of the screen is less 
+than 768px  the burger form will be displayed */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* ? so we won't se the side-nav-bar */
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #181a22;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    transform: translateX(100%);
+    /* ? to remove the side-nav-bar from the screen*/
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+    /* ? we won't se the content of the nav */
+  }
+  .burger {
+    /* ? we will see only the three lines which will be click able to open the nav*/
+    display: block;
+    z-index: +1;
+  }
+  .nav-links li:hover .sub-menu-1 ul {
+    display: none;
+  }
+}
+/* we use the property in js so it will be  displayed in the page when clicked*/
+.nav-active {
+  transform: translateX(0%);
+}
+
+/* link fade for the pages being displayed */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* when we click the three lines will be transformed in button X */
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* !
+!-------------------------------------
+!-------------------------------------
+!    MAIN PAGE STYLE
+!-------------------------------------
+!------------------------------------- */
+
+/* opening text properties */
+.openingText {
+  width: 500px;
+  margin: 270px auto;
+  color: #c5c6c7;
+  font-family: prototype, sans-serif;
+  letter-spacing: 3px;
+  font-size: 300%;
+  text-align: center;
+  cursor: context-menu;
+}
+
+/* opening text animation */
+.openingText span {
+  animation: opening-text 2.5s infinite;
+}
+
+/* the shadow animation at the opening text */
+@keyframes opening-text {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 5px #e3e2df, 0 0 10px #e3e2df, 0 0 20px #e3e2df, 0 0 40px #e3e2df,
+      0 0 60px #e3e2df;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+/* content so it will apear like a glass where all 
+the content off the main page will be displayed */
+.content {
+  background-color: #1f2833;
+  backdrop-filter: blur(1px);
+  -webkit-background-filter: blur(1 px);
+  z-index: -1;
+}
+
+/* content position in the page */
+.content {
+  margin-top: 350px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 50px;
+  border-radius: 15px;
+}
+
+/* all the paragraphs in the content */
+.content p {
+  padding: 2%;
+  color: #c5c6c7;
+  font-family: nasalization, sans-serif;
+}
+
+/* all the sub pages diplayed inside another container inside the content */
+.mainimages {
+  padding-top: 15px;
+  padding-left: 2em;
+  padding-bottom: 15px;
+}
+
+/* each main subpage having a separate background */
+.mainimages .box {
+  background-color: #1f2833;
+  margin-right: 2em;
+  border-radius: 15px;
+  height: 373px;
+  margin-bottom: 4em;
+}
+
+/* the images styles */
+.mainimages .box img {
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* the links that are over the images properties */
+.mainimages .aih3 a {
+  position: absolute;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 12em;
+  font-family: prototype, sans-serif;
+  color: #c5c6c7;
+  background-color: #1f2833;
+  margin-left: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  letter-spacing: 1px;
+  font-size: 25px;
+  justify-content: space-around;
+  line-height: 5%;
+  text-decoration: none;
+}
+
+/* comunication link position and style */
+.mainimages .communicationh3 a {
+  position: absolute;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 12em;
+  font-family: prototype, sans-serif;
+  color: #c5c6c7;
+  background-color: #1f2833;
+  margin-left: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  letter-spacing: 1px;
+  font-size: 25px;
+  justify-content: space-around;
+  line-height: 5%;
+  text-decoration: none;
+}
+
+/*comunication link position and style*/
+.mainimages .transporth3 a {
+  position: absolute;
+  padding-left: 0.4em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 12em;
+  font-family: prototype, sans-serif;
+  color: #c5c6c7;
+  background-color: #1f2833;
+  margin-left: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  letter-spacing: 1px;
+  font-size: 25px;
+  justify-content: space-around;
+  line-height: 5%;
+  text-decoration: none;
+}
+
+/* tourism and colonisation style since we need the same for both */
+.mainimages .tourh3 a,
+.colh3 a {
+  position: absolute;
+  margin-left: 1em;
+  padding-left: 1em;
+  padding-right: 0.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 12em;
+  right: 42px;
+  font-family: prototype, sans-serif;
+  color: #c5c6c7;
+  background-color: #1f2833;
+  margin-left: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  letter-spacing: 1px;
+  font-size: 25px;
+  justify-content: space-around;
+  line-height: 5%;
+  text-decoration: none;
+}
+/*! edited text 1.3.5*/
+.mainimages .aicontainer {
+  width: 850px;
+  position: absolute;
+  top: 0.4em;
+  left: 19em;
+}
+
+/* communication container properties of the text */
+.mainimages .comcontainer {
+  width: 70%;
+  position: absolute;
+  top: 56em;
+  left: 20em;
+}
+
+/* transport container properties of the text*/
+.mainimages .trancontainer {
+  width: 900px;
+  position: absolute;
+  top: 110em;
+  left: 20em;
+}
+
+/* animation of the titles inside the images*/
+
+.aih3 a,
+.colh3 a,
+.communicationh3 a,
+.tourh3 a,
+.transporth3 a {
+  animation: h3-colorchange 3s infinite;
+}
+/*animation property*/
+@keyframes h3-colorchange {
+  0% {
+    color: #66fcf1;
+  }
+  50% {
+    color: #45a29e;
+  }
+  100% {
+    color: #66fcf1;
+  }
+}
+/* box animations*/
+.box {
+  animation: main-box 3s infinite;
+}
+
+/* box animation properties*/
+@keyframes main-box {
+  0% {
+    background-color: #181f27;
+  }
+
+  50% {
+    background-color: #171d24;
+  }
+
+  100% {
+    background-color: #181f27;
+  }
+}
+
+/* remove the text of the sub pages so the will se only the pictures */
+@media screen and (max-width: 1200px) {
+  .content .box p {
+    display: none;
+  }
+}
+
+
+
+/* !
+?-----------------------------
+!-----------------------------
+!       BUTTON THAT WILL BRING AT THE TOP OF THE PAGE
+!-------------------------------
+?-------------------------------
+! */
+/* ? style of the rocked button that will return to the top of the page*/
+.back_button {
+  position: fixed;
+  bottom: 55px;
+  right: 10px;
+  transition: 0.8s;
+}
+
+.back_button img {
+  width: 50px;
+  height: 60px;
+  opacity: 0.4;
+  transition: 0.8s;
+}
+
+.back_button img:hover {
+  opacity: 1;
+}
+/* !
+!-------------------------------------
+!-------------------------------------
+!BACK BUTTON OVER
+!-------------------------------------
+!------------------------------------- */
+
+/* !
+!-------------------------------------
+!-------------------------------------
+!STUDENT CARDS
+!-------------------------------------
+!------------------------------------- */
+/* ? style of the students cards where each sstudent will have its own unique card */
+
+/* card style and position */
+.card {
+  margin: 100px auto 0;
+  width: 350px;
+  height: 500px;
+  perspective: 1000px;
+  margin-bottom: 90px;
+}
+
+/* inside the card style */
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+/* when we want to flip the card the rotate effect */
+.card__inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* style of the card face both fron and the back  */
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px #0b0c10;
+}
+
+/* fron face of the card where only the role of the student is told */
+.card__face--front {
+  background-image: linear-gradient(to bottom right, #66fcf1, #45a29e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* student role text properties */
+.card__face--front h2 {
+  color: #1f2833;
+  font-size: 32px;
+}
+
+/* style of the back face of the card */
+.card__face--back {
+  background-color: var(#1f2833);
+  transform: rotateY(180deg);
+}
+
+/* the content that the back of the card will have //// style */
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
+/* card header the image of the developer and the name */
+.card__header {
+  position: relative;
+  padding: 30px 30px 40px;
+}
+
+/* after properties when we flip the card after the action is done */
+.card__header:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom left, #66fcf1 10%, #45a29e 115%);
+  z-index: -1;
+  border-radius: 0px 0px 50% 0px;
+}
+
+/* image style */
+.pp {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  background-color: #1f2833;
+  border: 5px solid #1f2833;
+  object-fit: cover;
+}
+
+/* the name of the student properties */
+.card__header h2 {
+  color: #1f2833;
+  font-size: 25px;
+  font-family: prototype, Courier, monospace;
+  letter-spacing: 1.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* the text and the topic of the developer */
+.card__body {
+  padding: 30px;
+}
+
+/* the title of wich topic the developer worked on */
+.card__body h3 {
+  color: #c5c6c7;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-family: prototype;
+}
+
+/* the text about the developer */
+.card__body p {
+  color: #c5c6c7;
+  font-size: 18px;
+  line-height: 1.4;
+  font-family: nasalization;
+}
+/* !
+!-------------------------------------
+!-------------------------------------
+!FOOTER OF THE STUDENTS ALSO IUSED INT THE OTHER PAGES
+!-------------------------------------
+!------------------------------------- *
+/* ? footer for the students cards*/
+/* size and the look */
+.student_cards_footer {
+  width: 100%;
+  height: 3.5em;
+  background-color: #1f2833;
+  font-family: prototype, sans-serif;
+}
+
+/* display so it will be responsive */
+.student_cards_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* the button styles */
+.student_cards_footer .student_link_btn {
+  padding: 7px;
+  border-radius: 5px;
+  color: #c5c6c7;
+  border: #c5c6c7;
+  border-style: solid;
+  border-width: medium;
+  background-color: #1f2833;
+  cursor: pointer;
+}
+
+/* the one student that is appeared in the screen its name 
+will be with the active properties */
+.active-student-card {
+  padding: 10px;
+  border-radius: 7px;
+  border: #1f2833;
+  box-shadow: 0 0 5px #c5c6c7, 0 0 5px #45a29e, 0 0 5px #c5c6c7, 0 0 5px #45a29e,
+    0 0 8px #c5c6c7;
+  color: #1f2833;
+  background-color: #59809b;
+}
+
+/* text in the link/button srtyles  */
+.student_link_btn {
+  text-decoration: none;
+  color: #c5c6c7;
+  font-family: prototype, sans-serif;
+}
+
+/* the transitions for a smoother hover effect */
+.student_cards_footer,
+.student_link_btn {
+  transition: 0.5s;
+}
+
+/* when we hover oveer the footer */
+.student_cards_footer:hover {
+  box-shadow: 0 0 10px #c5c6c7;
+}
+
+/* when we hover over a button */
+.student_link_btn:hover {
+  padding: 13px;
+  box-shadow: 0 0 5px #c5c6c7, 0 0 5px #45a29e, 0 0 5px #c5c6c7, 0 0 5px #45a29e,
+      0 0 8px #c5c6c7;
+  color: #1f2833;
+  background-color: #45a29e;
+}
+
+/* ! the end of the style for the students cards footer */
+/* ? footer of the main page */
+.main_footer {
+  width: 100%;
+  height: 3.5em;
+  background-color: #1f2833;
+  font-family: prototype, sans-serif;
+}
+
+.main_footer {
+  display: flex;
+  flex-direction: left;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main_footer .worked_by_student {
+  padding: 7px;
+  border-radius: 5px;
+  color: #c5c6c7;
+  border: #c5c6c7;
+  border-style: solid;
+  border-width: medium;
+  background-color: #2e2e3a;
+  cursor: pointer;
+  font-family: nasalization, Courier, monospace;
+}
+
+.main_footer,
+.worked_by_student {
+  transition: 0.7s;
+}
+
+.main_footer:hover {
+  box-shadow: 0 0 10px #c5c6c7;
+}
+
+.worked_by_student:hover {
+  padding: 13px;
+  box-shadow: 0 0 5px #c5c6c7, 0 0 5px #45a29e, 0 0 5px #c5c6c7, 0 0 5px #45a29e,
+    0 0 8px #c5c6c7;
+  color: #1f2833;
+  background-color: #45a29e;
+}
+
+/* !
+!-----------------------------
+!-----------------------------
+!       COLONISATION PROPERTIES
+!-------------------------------
+!-------------------------------
+! */
+
+/* position of the main title arranged in the 
+midle so it will stay always in the middle */
+.coltitle {
+  position: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 105px;
+}
+
+/* main title properties */
+.colonisation-title {
+  font-family: nasalization, Arial;
+  color: #45a29e;
+  text-shadow: 0.1em 0.1em 0 #1f2833;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 40px;
+  transition: 0.5s;
+  cursor: context-menu;
+}
+
+/* main title effects when we hover */
+.colonisation-title:hover {
+  text-shadow: -0.1em 0.1em 0 #1f2833;
+}
+
+/* space colonisation title properties */
+.col-space {
+  position: static;
+  margin-top: 25px;
+  text-align: center;
+  color: #1f2833;
+  font-family: nasalization, sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-shadow: 3px 2px #c5c6c7;
+  transition: 0.4s;
+}
+
+/* title effect */
+.col-space:hover {
+  text-shadow: 3px 2px #45a29e;
+}
+
+/* colonisation of space text properties  */
+.col-space-text {
+  position: static;
+  margin-top: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+  font-size: 22px;
+  font-family: prototype, Arial, Helvetica, sans-serif;
+  transition: 0.4s;
+}
+
+/* space history tile properties */
+.col-space-history {
+  position: static;
+  text-align: center;
+  margin-top: 15px;
+  display: block;
+  color: #1f2833;
+  font-family: nasalization, sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-shadow: 3px 2px #c5c6c7;
+  transition: 0.4s;
+}
+
+/* hover effect of the space history subtitle */
+.col-space-history:hover {
+  text-shadow: 3px 2px 3px #45a29e;
+}
+
+/* space history text style properties */
+.col-space-history-text {
+  position: static;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+  font-size: 22px;
+  font-family: prototype, Arial, Helvetica, sans-serif;
+  transition: 0.4s;
+}
+
+/* apollo title when we hover */
+.appollo-title {
+  position: static;
+  margin-top: 30px;
+  text-align: center;
+  display: block;
+  color: #212121;
+  font-family: nasalization, sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-shadow: 3px 2px #c5c6c7;
+  transition: 0.4s;
+}
+
+/* apollo title properties when we hover */
+.appollo-title:hover {
+  text-shadow: 3px 2px 3px#45a29e;
+}
+
+/* style protperties of apollo text */
+.apollo-text {
+  position: static;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+  font-size: 22px;
+  font-family: prototype, Arial, Helvetica, sans-serif;
+  transition: 0.4s;
+}
+
+/* the text of all the subtitles */
+.col-space-text,
+.col-space-history-text,
+.apollo-text {
+  border-radius: 20px;
+  padding: 10px;
+  background: #45a29e;
+  background-repeat: no-repeat;
+  transition: 0.8s;
+  animation: col-text 5s infinite;
+}
+
+@keyframes col-text {
+  0% {
+    background: #45a29e;
+  }
+  50% {
+    background: #37827e;
+  }
+  100% {
+    background: #45a29e;
+  }
+}
+
+/* Style properties change when we hover text */
+.col-space-history-text:hover,
+.col-space-text:hover,
+.apollo-text:hover {
+  box-shadow: 3px 4px 5px #1f2833;
+}
+
+/*! image slider at colonisation moon landing */
+
+/* css for manual  slide navigator */
+
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 5px;
+}
+
+.slideshow-container img:hover {
+  box-shadow: 7px 5px 4px #45a29e;
+  border-radius: 30px;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #66fcf1;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: #1f2833;
+  font-size: 23px;
+  color: #45a29e;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  margin-bottom: 10px;
+  background-color: #c5c6c7;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease-out;
+}
+
+/* style of the dots that tells which one of the images is active */
+/* when we hover over a dot it will change the 
+color and size tellin that we are going to click that on  */
+.active,
+.dot:hover {
+  background-color: #c5c6c7;
+  height: 17px;
+  width: 17px;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+/* fade display when we change the image */
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+}
+
+/* !
+!-----------------------------
+!-----------------------------
+!       Space X PROPERTIES
+!-------------------------------
+!-------------------------------
+! */
+
+/* *spacex content style */
+/* space x title style properties 
+so it will stay in the middle in all the formats */
+.spx-title {
+  position: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 300px;
+}
+/* the style/look of the title */
+.spacex-title {
+  font-family: nasalization, Arial;
+  color: #1f2833;
+  text-shadow: 0.1em 0.1em 0 #45a29e;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 80px;
+  transition: 0.5s;
+  cursor: context-menu;
+}
+
+/* when we hover over the title change the shadow position and the color */
+.spacex-title:hover {
+  text-shadow: -0.1em 0.1em 0 #45a29e;
+}
+/* * image background */
+.spx-firstbck {
+  /* The image used */
+  background-image: url("../images/falcon9bck.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 370px;
+}
+.spx-falcon9 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 900px;
+  font-family: prototype, sans-serif;
+  font-size: 60px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+/* * falcon 9 sub title */
+.spx-falconsubt {
+  position: absolute;
+  left: 50%;
+  top: 950px;
+  transform: translate(-50%, -50%);
+  color: #0b0c10;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  font-family: prototype, Verdana, sans-serif;
+  text-align: center;
+}
+/* falcon stats */
+.spx-grid-container {
+  position: absolute;
+  top: 1090px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+/* the items of the the stats style */
+.spx-grid-container .grid-item {
+  padding-bottom: 30px;
+  padding-left: 170px;
+  padding-right: 170px;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  cursor: context-menu;
+  transition: 0.9s;
+}
+/* when we hover over the stats of the falcon spaceship */
+.spx-grid-container #spx-1:hover {
+  color: #45a29e;
+}
+.spx-grid-container #spx-2:hover {
+  color: #45a29e;
+}
+.spx-grid-container #spx-3:hover {
+  color: #45a29e;
+}
+.falcon-intro {
+  position: absolute;
+  top: 1250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: nasalization, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  text-align: center;
+}
+/* responsive falcon*/
+@media screen and (max-width: 768px) {
+  .spx-falcon9 {
+    top: 800px;
+    font-size: 30px;
+  }
+  .spx-falconsubt {
+    top: 850px;
+    font-size: 10px;
+  }
+  .spx-grid-container {
+    top: 910px;
+  }
+  .spx-grid-container .grid-item {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+  .falcon-intro {
+    top: 990px;
+    font-size: 10px;
+  }
+}
+/* responsive falcon*/
+
+.falcon-news {
+  position: static;
+  text-align: center;
+  margin-top: 100px;
+  width: 700px;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: prototype, sans-serif;
+  font-size: 25px;
+  color: #c5c6c7;
+}
+.spx-scnd-bck {
+  margin-bottom: 40px;
+}
+/* the style of the text when we are in the property of the phone */
+@media screen and (max-width: 768px) {
+  .falcon-news {
+    width: 400px;
+    margin-top: 80px;
+    font-size: 15px;
+  }
+}
+/* style of the video */
+.falcon-video {
+  position: relative;
+  margin-left: 50%;
+  transform: translate(-50%);
+  width: 700px;
+  height: 400px;
+  border-radius: 20px;
+  opacity: 80%;
+  transition: 0.3s;
+}
+/* when we hover over the video in space x  */
+.falcon-video:hover {
+  border-radius: 25px;
+  opacity: 100%;
+}
+/* the size of the video will be changed */
+@media screen and (max-width: 768px) {
+  .falcon-video {
+    width: 350px;
+    height: 230px;
+  }
+}
+
+/* !
+!-----------------------------
+!-----------------------------
+!      LIFE IN MARS
+!-------------------------------
+!-------------------------------
+! */
+/* !error 404 page not found style */
+/* * displaying the gif in the middle */
+.mars-gif {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 90px;
+}
+
+/* * giving a border radius to the image so it will look rounded*/
+.mars-gif img {
+  border-radius: 50%;
+}
+
+.mars-gif p {
+  position: absolute;
+  font-family: nasalization, Arial, sans-serif;
+}
+
+/* *Puttin the error text in the middle of the planet*/
+
+.error {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* *decorating the error text*/
+.error h1 {
+  font-family: prototype, Verdana;
+  font-size: 50px;
+  color: #7e1b1b;
+  transition: 0.4s;
+  cursor: context-menu;
+}
+
+/* give a shadow when we hover over the error 404*/
+.error h1:hover {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff,
+    0 0 120px #fff;
+}
+
+/* the buttons for return options after the page wasn't found*/
+/* position*/
+.error_return_options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+/* button style */
+.error_return_options button {
+  width: 250px;
+  height: 50px;
+  border-radius: 20px;
+  border-color: #45a29e;
+  font-size: 17px;
+  color: #45a29e;
+  background-color: #c5c6c7;
+  cursor: pointer;
+  transition: 0.8s;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+/* when the user hover */
+.error_return_options button:hover {
+  color: #c5c6c7;
+  border-color: #c5c6c7;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+/* the animation of the color changing */
+.error_return_options button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #45a29e;
+  transition: 0.5s cubic-bezier(1, 2, 0.2, 0.6);
+}
+
+/* the color will slide till all the button is filled with that color */
+.error_return_options button:hover::before {
+  width: 100%;
+}
+
+/* ? -----------------------------------------------------------------------------------------------------------------*/
+/* 
+! /////////////////////////////
+! /////////////////////////////
+! //// Tringa Rexhepaj Work ////////////
+! /////////////////////////////
+! ////////////////////////////
+!*/
+/* ? -----------------------------------------------------------------------------------------------------------------*/
+
+/* Style for the background container */
+.neu-background {
+  background: linear-gradient(to top right, #0b0c10 0%, #181a22 100%);
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  color: #c5c6c7;
+  font-family: "exo-2-0", sans-serif;
+  position: relative;
+}
+/* Style for the header container */
+.ai-header-container {
+  position: relative;
+  background-color: #c5c6c7;
+  top: 0%;
+  min-height: 337px;
+}
+/* Style for the video inside the header container */
+.ai-vid-container {
+  position: absolute;
+  left: 0px;
+}
+/* Style for the text inside the header container */
+.ai-text-container {
+  position: absolute;
+  margin-top: 4%;
+  margin-left: 50%;
+  padding-right: 10%;
+  color: #45a29e;
+  font-family: nasalization, sans-serif;
+}
+
+.ai-text-container h1 {
+  font-size: 80px;
+  font-weight: 400;
+  text-shadow: 0 0 40px #c5c6c7, 0 0 20px #c5c6c7, 0 0 10px #45a29e;
+}
+
+.ai-text-container p {
+  font-size: 30px;
+  font-weight: 400;
+  text-shadow:0 0 40px #c5c6c7, 0 0 20px #c5c6c7, 0 0 10px #45a29e;
+}
+/* Style for the Read More button which takes you from header to the content of the page */
+.ai-text-container a {
+  text-decoration: none;
+  background: #45a29e;
+  padding: 14px 40px;
+  display: inline-block;
+  color: #c5c6c7;
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 30px;
+}
+/* Style to make the header responsive */
+@media all and (max-width: 1460px) and (min-width: 0px) {
+  .ai-text-container {
+    margin-right: 0%;
+    margin-left: 40%;
+    margin-top: 10%;
+  }
+  .ai-text-container h1 {
+    font-size: 40px;
+  }
+  .ai-text-container p {
+    font-size: 19px;
+  }
+  .ai-text-container a {
+    font-size: 12px;
+  }
+}
+
+/* Style for the content blocks which utilize the grid display. */
+/* Used for the 3 block content+image boxes in neuralink.html and vr.html as well as the accordion buttons with panels in shopping.html and gaming.html*/
+
+.ai-contentbox {
+  background: linear-gradient(to top right,#0b0c10 0%, #181a22 100%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: repeat(3) minmax(600, 1fr);
+}
+
+/* Style for the content in the accordion+panel grids */
+.ai-content {
+  padding: 1.5em;
+  margin: 5px;
+}
+
+.ai-content h4 {
+  font-weight: bold;
+  font-size: large;
+}
+.ai-content h4,
+.ai-content p {
+  float: left;
+  text-shadow: 0 0 40px #45a29e, 0 0 20px #45a29e, 0 0 10px #c5c6c7;
+  font-family: nasalization, sans-serif;
+}
+.ai-content h4,
+.ai-content p {
+  float: left;
+}
+/* Style for the accordion effect on the button + panel elements in the grid above */
+
+.ai-accordion {
+  background: linear-gradient(to top right, #45a29e 0%, #c5c6c7 100%);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.ai-accordion:hover {
+  background: linear-gradient(to top right, #45a29e 0%, #c5c6c7 100%);
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.ai-panel {
+  padding: 18px;
+  background: linear-gradient(to top right, #45a29e 0%, #c5c6c7 100%);
+  display: none;
+  overflow: hidden;
+}
+
+/* Style for the content+image grids */
+.ai-content1 {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 10px;
+  font-family: nasalization, sans-serif;
+}
+
+.ai-content2 {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 10px;
+  font-family: nasalization, sans-serif;
+}
+.ai-content3 {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 10px;
+  font-family: nasalization, sans-serif;
+}
+
+/* Style for the containers with text and an image in the side */
+div.ai-bigcontainer {
+  display: block;
+  border: solid #45a29e 5px;
+  border-radius: 15px;
+  display: table;
+  padding: 5px;
+  width: 100%;
+  margin: 5px 0;
+}
+div.ai-contenttxt {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: justify;
+  padding-right: 10%;
+  font-family: nasalization, sans-serif;
+}
+div.ai-bigcontainer .ai-imgonside {
+  vertical-align: middle;
+  display: table-cell;
+  padding-right: 5px;
+  width: 40%;
+}
+div.ai-imgonside img {
+  width: 50%;
+  padding-left: 3%;
+  vertical-align: middle;
+}
+
+/* Style for the containers with text and a video on the side */
+div.ai-bigcontainer .ai-vidside1 {
+  vertical-align: middle;
+  display: table-cell;
+  padding-right: 5px;
+  margin-left: 10px;
+}
+
+div.ai-bigcontainer .ai-vidside2 {
+  vertical-align: middle;
+  display: table-cell;
+  margin-left: 10px;
+}
+
+/* Style for the tables with content in vr.html */
+.ai-table {
+  margin: auto;
+  padding: 20px;
+  width: 90%;
+  font-family: nasalization, sans-serif;
+}
+
+.ai-table th {
+  text-shadow: 0 0 40px #45a29e, 0 0 20px #45a29e, 0 0 10px #c5c6c7;
+  padding: 15px;
+  font-size: 30px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.ai-table td {
+  padding: 15px;
+  font-size: 25px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.ai-table td p {
+  padding: 15px;
+  font-size: 20px;
+}
+/*Arrow that scrolls up when you click it*/
+#ai-scrollToTop {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: none;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  opacity: 50%;
+}
+#ai-scrollToTop:hover {
+  background: #45a29e;
+  opacity: 100%;
+}
+
+#ai-scrollToTop:active {
+  background: #45a29e;
+}
+
+#ai-readMore {
+  cursor: pointer;
+}
+#ai-readMore:active {
+  background-color: #c5c6c7;
+}
+
+/* referencing page style  */
+.main-ref {
+  position: static;
+  width: 50em;
+  height: 150em;
+  background-color: #45a29e;
+  margin-top: 10em;
+  margin-bottom: 10em;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  animation: ref 5s infinite;
+}
+
+@keyframes ref {
+  0% {
+    border-radius: 10px;
+    background-color: #45a29e;
+  }
+  50% {
+    border-radius: 30px;
+    background-color: #2d716e;
+  }
+  100% {
+    border-radius: 10px;
+    background-color: #45a29e;
+  }
+}
+
+.text-sources {
+  position: static;
+  text-align: left;
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2em;
+  font-family: "Times New Roman", Times, serif;
+  color: #ffffff;
+  font-size: 18px;
+}
+/* referencing page style  */
+
+/* !\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+! /////////// Arita Ismajli ///////////
+!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+!\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+/* TOURISM CSS */
+/* every class and id of mine about tourism has the "t-" prefix */
+
+#t-pannels {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  z-index: -1;
+}
+
+.t-sections {
+  margin-top: 20px;
+  width: 50%;
+  /* z-index: -1; */
+}
+
+#t-section1,
+#t-section3 {
+  margin-left: 10%;
+  margin-right: 40%;
+  background-color: #2e2e3a;
+}
+
+#t-section2,
+#t-section4 {
+  margin-right: 10%;
+  margin-left: 40%;
+  background-color: #2e2e3a;
+}
+
+.t-bottom-left {
+  position: absolute;
+  bottom: 8px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+#t-section1,
+#t-section3,
+#t-section2,
+#t-section4 {
+  position: relative;
+  text-align: center;
+  color: #c5c6c7;
+}
+
+#t-section1 {
+  height: 400px;
+  border-radius: 0.9em;
+  position: relative;
+  width: 50%;
+}
+
+#t-section2 {
+  height: 400px;
+  border-radius: 0.9em;
+}
+
+#t-section3 {
+  height: 400px;
+  border-radius: 0.9em;
+}
+
+#t-section4 {
+  height: 400px;
+  border-radius: 0.9em;
+}
+
+.t-sections img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 0.9em;
+}
+
+h2 {
+  color: #c5c6c7;
+  font-family: prototype;
+  border-radius: 0.9em;
+}
+
+a.t-button1 {
+  border-radius: 0.9em;
+}
+
+.t-image:hover {
+  opacity: 0.4;
+}
+
+.t-tourism-heading {
+  text-align: center;
+  margin-top: 70px;
+  font-size: 50px;
+  font-family: "Exo 2.0", arial;
+  color: #c5c6c7;
+}
+
+.t-headings-1,
+.headings-2 {
+  text-align: center;
+  margin: 5px;
+}
+
+.t-headings-1 {
+  /*    make them block elements*/
+  font-family: "Exo 2.0", arial;
+}
+
+.t-headings-2 {
+  font-family: "Exo 2.0", arial;
+  text-align: center;
+}
+
+.t-titles-section {
+  margin-top: 70px;
+}
+
+.t-leftimage {
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 0.9em;
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.t-split {
+  display: inline;
+  text-align: center;
+}
+
+.t-subcontent {
+  margin: 30px;
+}
+
+/* the style for the 4 sub-webpages*/
+
+.t-split {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.t-left {
+  left: 0px;
+  width: 35%;
+}
+
+.t-right {
+  float: right;
+  right: 0px;
+  width: 65%;
+}
+
+.t-leftimage {
+  height: 250px;
+  position: relative;
+}
+
+.t-paragraph {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.t-container {
+  margin-top: 30px;
+}
+
+main {
+  padding-bottom: 50px;
+}
